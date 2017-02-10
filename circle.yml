@@ -5,8 +5,6 @@ machine:
 dependencies:
   cache_directories:
     - ~/.asdf
-    — deps
-    — _build
   pre:
     — ls
     - pwd
