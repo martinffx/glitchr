@@ -8,7 +8,9 @@ dependencies:
     — deps
     — _build
   pre:
-    — ./circle_pre_build.sh
+    — ls
+    - pwd
+    - bash circle_pre_build.sh
     — mix deps.compile
     — mix compile
 
