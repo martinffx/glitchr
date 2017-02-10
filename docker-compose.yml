@@ -1,0 +1,13 @@
+version: "2"
+services:
+  db:
+    image: postgres:9.5.5
+    ports:
+      - 5432:5432
+    volumes:
+      - ./.data:/var/lib/postgresql/data
+      - ./db:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_USER=glitchr
+      - POSTGRES_PASSWORD=password
+
