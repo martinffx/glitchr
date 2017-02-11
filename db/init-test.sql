@@ -1,3 +1,4 @@
+DROP DATABASE glitchr_test;
 DO $$
 BEGIN
   IF NOT EXISTS (
