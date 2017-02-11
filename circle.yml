@@ -16,6 +16,10 @@ dependencies:
     - yes | mix deps.get
     - yes | mix deps.compile
 
+database:
+  override:
+    - psql -u ubuntu < ./db/init-test.sql
+
 test:
   override:
     - mix test --no-start
