@@ -1,4 +1,3 @@
-CREATE DATABASE glitchr_test;
 DO $$
 BEGIN
   IF NOT EXISTS (
@@ -7,7 +6,7 @@ BEGIN
      WHERE  usename = 'glitchr') THEN
 
      CREATE ROLE glitchr LOGIN PASSWORD 'password';
+     ALTER USER glitchr CREATEDB;
    END IF;
 END
 $$;
-GRANT ALL PRIVILEGES ON DATABASE glitchr_test TO glitchr;
