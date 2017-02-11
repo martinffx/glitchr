@@ -7,7 +7,7 @@ dependencies:
   #   - mkdir -p _build
   #   - mkdir -p deps
   cache_directories:
-    - ~/.asdf
+    - "~/.asdf"
     # - _build
     # - deps
   pre:
