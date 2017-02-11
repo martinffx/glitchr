@@ -13,7 +13,7 @@ dependencies:
 
 database:
   override:
-    - psql -u ubuntu < ./db/init-test.sql
+    - psql -U ubuntu < ./db/init-test.sql
 
 test:
   override:
