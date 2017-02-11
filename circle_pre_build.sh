@@ -14,8 +14,10 @@ if ! asdf | grep version; then
 fi
 
 # Install erlang/elixir
-asdf install erlang
-asdf install elixir
+erlang_version=$(awk '/erlang/ { print $2 }' .tool-versions)
+asdf install erlang $erlang_version
+elixir_version=$(awk '/elixir/ { print $2 }' .tool-versions)
+asdf install elixir $elixir_version
 
 # Get dependencies
 yes | mix deps.get
