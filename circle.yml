@@ -3,10 +3,13 @@ machine:
     PATH: "$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
 
 dependencies:
+  override:
+    - mkdir -p _build
+    - mkdir -p deps
   cache_directories:
-    - "~/.asdf"
-    - "_build"
-    - "deps"
+    - ~/.asdf
+    - _build
+    - deps
   pre:
     - if ! asdf | grep version; then git clone https://github.com/HashNuke/asdf.git ~/.asdf; fi
     - asdf plugin-add erlang https://github.com/HashNuke/asdf-erlang.git
