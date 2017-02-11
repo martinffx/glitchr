@@ -17,4 +17,8 @@ database:
 
 test:
   override:
+    - elixir -v
+    - mix deps
+    - node -v
+    - npm -v
     - mix test
