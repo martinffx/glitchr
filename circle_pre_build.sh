@@ -5,7 +5,7 @@
 set -e
 
 # Check for asdf
-if ! asdf | grep version; then
+if ! asdf | grep version; Then
     git clone https://github.com/HashNuke/asdf.git ~/.asdf;
 
     # Add plugins for asdf
@@ -21,7 +21,7 @@ asdf install elixir $elixir_version
 
 # Get dependencies
 yes | mix deps.get
-mix local.rebar
+yes | mix deps.compile
 
 # Exit successfully
 exit 0
