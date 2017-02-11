@@ -5,7 +5,7 @@
 set -e
 
 # Check for asdf
-if [ ! asdf | grep version; ]
+if [ ! asdf | grep version ]
 then
     git clone https://github.com/HashNuke/asdf.git ~/.asdf;
 
