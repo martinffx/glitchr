@@ -5,8 +5,8 @@ machine:
 dependencies:
   cache_directories:
     - ~/.asdf
-    - _build
-    - deps
+    - ~/glitchr/_build
+    - ~/glitchr/deps
   pre:
     - if ! asdf | grep version; then git clone https://github.com/HashNuke/asdf.git ~/.asdf; fi
     - asdf plugin-add erlang https://github.com/HashNuke/asdf-erlang.git
