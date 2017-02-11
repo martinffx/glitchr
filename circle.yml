@@ -8,6 +8,7 @@ dependencies:
     - deps
     - _build
   pre:
+    - chmod +x ./circle_pre_build.sh
     - ./circle_pre_build.sh
     # - if ! asdf | grep version; then git clone https://github.com/HashNuke/asdf.git ~/.asdf; fi
     # - asdf plugin-add erlang https://github.com/HashNuke/asdf-erlang.git
