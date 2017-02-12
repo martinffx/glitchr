@@ -21,6 +21,7 @@ elixir_version=$(awk '/elixir/ { print $2 }' .tool-versions)
 asdf install elixir $elixir_version
 
 # Compile
+yes | mix deps.get
 yes | mix compile
 
 # Build
