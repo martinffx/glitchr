@@ -1,8 +1,6 @@
 machine:
   services:
     - docker
-  node:
-    version: v6.1.0
   environment:
     PATH: "$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
 
@@ -15,6 +13,9 @@ dependencies:
   pre:
     - chmod +x ./circle_pre_build.sh
     - ./circle_pre_build.sh
+  post:
+    - chmod +x ./circle_post_build.sh
+    - ./circle_post_build.sh
 
 database:
   override:
