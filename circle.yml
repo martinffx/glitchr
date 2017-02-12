@@ -1,10 +1,13 @@
 machine:
+  services:
+    - docker
   environment:
     PATH: "$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
 
 dependencies:
   cache_directories:
     - ~/.asdf
+    - ~/docker
     - deps
     - _build
   pre:
@@ -17,8 +20,14 @@ database:
 
 test:
   override:
-    - elixir -v
-    - mix deps
-    - node -v
-    - npm -v
     - mix test
+  post:
+    - docker run -d -p 4000:4000 -e "PORT=4000" martinffx/glitchr; sleep 10
+    - curl --retry 10 --retry-delay 5 -v http://localhost:4000
+
+deployment:
+  prod:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push martinffx/glitchr

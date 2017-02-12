@@ -5,7 +5,7 @@
 set -e
 
 # Check for asdf
-if [ ! asdf | grep version ]
+if ! asdf | grep version;
 then
     git clone https://github.com/HashNuke/asdf.git ~/.asdf;
 
@@ -20,9 +20,14 @@ asdf install erlang $erlang_version
 elixir_version=$(awk '/elixir/ { print $2 }' .tool-versions)
 asdf install elixir $elixir_version
 
-# Get dependencies
-# yes | mix deps.get
+# Compile
 yes | mix compile
+
+# Build
+./node_modules/brunch/bin/brunch b -p && MIX_ENV=prod mix do phoenix.digest, release --env=prod
+
+# Dockerise
+docker build -t martinffx/glitchr .
 
 # Exit successfully
 exit 0
