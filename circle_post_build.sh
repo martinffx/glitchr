@@ -2,7 +2,9 @@
 
 set -e
 
-# Build
+ls
+npm install
+ls node_modules
 ./node_modules/brunch/bin/brunch b -p && MIX_ENV=prod mix do phoenix.digest, release --env=prod
 
 # Dockerise
