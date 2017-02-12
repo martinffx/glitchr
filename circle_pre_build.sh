@@ -25,7 +25,6 @@ yes | mix deps.get
 yes | mix compile
 
 # Build
-npm cache clean
 ./node_modules/brunch/bin/brunch b -p && MIX_ENV=prod mix do phoenix.digest, release --env=prod
 
 # Dockerise

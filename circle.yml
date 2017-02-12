@@ -1,6 +1,8 @@
 machine:
   services:
     - docker
+  node:
+    version: v6.1.0
   environment:
     PATH: "$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
 
