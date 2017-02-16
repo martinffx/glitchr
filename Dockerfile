@@ -1,4 +1,4 @@
-FROM alpine
+FROM elixir:1.4-slim
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
