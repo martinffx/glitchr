@@ -10,4 +10,12 @@ services:
     environment:
       - POSTGRES_USER=glitchr
       - POSTGRES_PASSWORD=password
-
+  web:
+    image: martinffx/glitchr
+    depends_on:
+      - db
+    ports:
+      - 4000:4000
+    environment:
+      - PORT=4000
+      - DATABASE_URL=postgres://glitchr:password@db/glitchr

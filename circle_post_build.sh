@@ -2,11 +2,11 @@
 
 set -e
 
-npm install
-./node_modules/brunch/bin/brunch b -p && MIX_ENV=prod mix do phoenix.digest, release --env=prod
+./node_modules/brunch/bin/brunch b -p
+MIX_ENV=prod mix do phoenix.digest, release --env=prod
 
 # Dockerise
-docker build -t martinffx/glitchr .
+mix docker build
 
 # Exit successfully
 exit 0
