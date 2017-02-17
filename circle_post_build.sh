@@ -6,7 +6,7 @@ set -e
 MIX_ENV=prod mix do phoenix.digest, release --env=prod
 
 # Dockerise
-mix docker build
+docker-compose build web
 
 # Exit successfully
 exit 0
