@@ -6,7 +6,7 @@ services:
       - POSTGRES_USER=glitchr
       - POSTGRES_PASSWORD=password
   web:
-    image: martinffx/glitchr
+    build: .
     depends_on:
       - db
     ports:
