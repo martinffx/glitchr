@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y postgresql-client
+RUN apt-get install -y postgresql-client wget
 
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
     && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
