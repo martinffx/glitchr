@@ -2,12 +2,16 @@ version: "2"
 services:
   db:
     image: postgres:9.5.5
+    ports:
+      - 5433:5432
     environment:
       - POSTGRES_USER=glitchr
       - POSTGRES_PASSWORD=password
   web:
     build: .
     depends_on:
+      - db
+    links:
       - db
     ports:
       - 4000:4000
