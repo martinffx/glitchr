@@ -1,5 +1,7 @@
 FROM elixir:1.4-slim
 
+ENV DOCKERIZE_VERSION v0.2.0
+
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
