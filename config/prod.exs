@@ -18,12 +18,12 @@ config :glitchr, Glitchr.Endpoint,
   server: true,
   root: ".",
   version: Mix.Project.config[:version],
-  secret_key_base: System.get_env("SECRET_KEY_BASE")
+  secret_key_base: {:system, "SECRET_KEY_BASE"}
 
 config :glitchr, Glitchr.Repo,
   adapter: Ecto.Adapters.Postgres,
-  url: System.get_env("DATABASE_URL"),
-  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+  url: {:system, "DATABASE_URL"},
+  pool_size: {:system "POOL_SIZE"},
   ssl: true
 
 # Do not print debug messages in production
@@ -58,7 +58,9 @@ config :logger, level: :info
 # If you are doing OTP releases, you need to instruct Phoenix
 # to start the server for all endpoints:
 #
-#     config :phoenix, :serve_endpoints, true
+
+config :phoenix, :serve_endpoints, true
+
 #
 # Alternatively, you can configure exactly which server to
 # start per endpoint:
