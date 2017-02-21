@@ -24,7 +24,7 @@ config :glitchr, Glitchr.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: {:system, "DATABASE_URL"},
   pool_size: 10,
-  ssl: true
+  # ssl: true
 
 # Do not print debug messages in production
 config :logger, level: :info
