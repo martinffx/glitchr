@@ -19,6 +19,12 @@ defmodule Glitchr.Router do
     get "/", PageController, :index
   end
 
+  scope "/admin", Glitchr do
+    pipe_through :browser
+
+    resources "/users", UserController
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", Glitchr do
   #   pipe_through :api
