@@ -16,11 +16,11 @@ defmodule Mix.Tasks.Docker do
   def docker(["release"]) do
     version = Keyword.fetch!(Mix.Project.config, :version)
     Mix.shell.info "Version: #{version}"
-    Mix.shell.cmd "docker tag glitchr_web martinffx/glitchr:#{version}"
-    Mix.shell.info "Logging into Docker Hub..."
-    MIX.shell.cmd "docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    Mix.shell.cmd "docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     -e $DOCKER_EMAIL"
-    Mix.shell.info "Pushing image..."
+
+    Mix.shell.cmd "docker tag glitchr_web martinffx/glitchr:#{version}"
+
     Mix.shell.cmd "docker push martinffx/glitchr:#{version}"
   end
 
