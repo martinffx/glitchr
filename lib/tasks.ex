@@ -5,7 +5,5 @@ defmodule Release.Tasks do
     path = Application.app_dir(:glitchr, "priv/repo/migrations")
 
     Ecto.Migrator.run(Glitchr.Repo, path, :up, all: true)
-
-    :init.stop()
   end
 end
