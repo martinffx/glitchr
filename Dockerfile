@@ -12,5 +12,6 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/v0.3.0/dockerize
 
 COPY ./_build/prod/rel/glitchr .
 COPY ./start.sh start.sh
+RUN chmod +x ./start.sh
 
-CMD chmod +x ./start.sh && ./start.sh
+CMD ./start.sh
