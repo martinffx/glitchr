@@ -26,5 +26,8 @@ defmodule Mix.Tasks.Docker do
   def docker(["deploy"]) do
     version = Keyword.fetch!(Mix.Project.config, :version)
     Mix.shell.info "TODO: Deploy Version: #{version}"
+
+    Mix.shell.cmd "ssh circle@dokku.martinrichards.me 'sudo docker pull martinffx/glitchr:#{version} && sudo docker tag martinffx/glitchr:#{version} dokku/glitchr:#{version}'"
+    Mix.shell.cmd "ssh dokku@dokku.martinrichards.me tags:deploy glitchr #{version}"
   end
 end
