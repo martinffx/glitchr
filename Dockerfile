@@ -5,8 +5,12 @@ WORKDIR /usr/src/app
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y postgresql-client
+RUN apt-get install -y postgresql-client wget tar
 
-COPY _build/prod/rel/glitchr .
+RUN wget https://github.com/jwilder/dockerize/releases/download/v0.3.0/dockerize-linux-amd64-v0.3.0.tar.gz \
+    && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-v0.3.0.tar.gz
 
-CMD ./bin/glitchr foreground
+COPY ./_build/prod/rel/glitchr .
+COPY ./start.sh start.sh
+
+CMD ./start.sh
