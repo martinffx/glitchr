@@ -38,6 +38,7 @@ config :glitchr, Glitchr.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "glitchr",
   password: "password",
-  database: "glitchr_dev",
+  database: "glitchr",
   hostname: "localhost",
+  port: 5433,
   pool_size: 10
