@@ -24,3 +24,6 @@ erl_crash.dump
 
 # docker db
 .data/
+
+# elm
+web/elm/elm-stuff/
