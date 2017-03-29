@@ -10,10 +10,10 @@ config :glitchr,
   ecto_repos: [Glitchr.Repo]
 
 # Configures the endpoint
-config :glitchr, Glitchr.Endpoint,
+config :glitchr, Glitchr.Web.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "ues/8849CWMPGPyo9V01LIeEqcP7NncZJPh17sb+YKmZsAtso+4cGo3FXapmEChV",
-  render_errors: [view: Glitchr.ErrorView, accepts: ~w(html json)],
+  render_errors: [view: Glitchr.Web.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Glitchr.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
