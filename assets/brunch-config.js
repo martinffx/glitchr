@@ -3,7 +3,7 @@ exports.config = {
   files: {
     javascripts: {
       joinTo:  {
-        'app.js': /\.js$/
+        'test.js': /\.js$/
       },
       entryPoints: {
         "elm/Main.elm": "js/main.js"
@@ -44,8 +44,8 @@ exports.config = {
     },
     elmBrunch: {
       elmFolder: "elm",
-      mainModules: ["./src/App.elm"],
-      // outputFolder: "vendor/client",
+      mainModules: ["src/Main.elm"],
+      outputFolder: "vendor/client",
       outputFile: "main.js"
     },
     babel: {
@@ -57,7 +57,7 @@ exports.config = {
   modules: {
     autoRequire: {
       "js/app.js": ["js/app"]
-    }
+ zPjWBku9UgGRdt8vRSKFcKY43F6mKH5b   }
   },
 
   npm: {
